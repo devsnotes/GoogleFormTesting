@@ -24,7 +24,7 @@ public class MainTest {
         selenium.click("group_779788489_1");
         selenium.click("entry.676519541");
         selenium.click("group_676519541_4");
-        
+
         selenium.select("entry_855085148", "index=1");
         selenium.type("entry_676519541_other_option_response", "20");
 
@@ -32,6 +32,8 @@ public class MainTest {
 
         Thread.sleep(2000);
         assertEquals(selenium.getText("//div[@class='ss-resp-message']"), "Your response has been recorded.");
+
+        selenium.close();
     }
 
     @Test
@@ -53,5 +55,7 @@ public class MainTest {
 
         Thread.sleep(2000);
         assertEquals(driver.findElement(By.xpath("//div[@class='ss-resp-message']")).getText(), "Your response has been recorded.");
+
+        driver.close();
     }
 }
